@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Aaron Milner - Contact</title>
@@ -15,9 +16,13 @@
         }
         .text-shadow-subtle {
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-        }.calendar-container iframe {
-            border-radius: 0.75rem;box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);}
-    </style>
+        }
+        .calendar-container iframe {
+            /* These styles are applied directly to the iframe for border-radius and shadow */
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+</style>
 </head>
 <body class="bg-slate-900 text-slate-300">
 <header class="bg-slate-800 shadow-md sticky top-0 z-50">
@@ -52,49 +57,57 @@
                     I'm always open to discussing new projects, creative ideas, or opportunities to be part of something meaningful. Feel free to reach out.
                 </p>
 </div>
-<div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-<div class="bg-slate-700 p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-sky-500/20 transition-shadow duration-300">
-<h2 class="text-3xl font-semibold text-sky-400 mb-6">Connect With Me</h2>
-<div class="space-y-6">
-<div>
-<h3 class="text-xl font-medium text-slate-200 mb-2 flex items-center">
-<span class="material-icons mr-3 text-sky-400">email</span> Email
-                            </h3>
-<p class="text-slate-300 mb-2">
-                                The best way to reach me for any inquiries or collaborations.
-                            </p>
-<a class="inline-flex items-center text-sky-400 hover:text-sky-300 transition-colors font-medium group" href="mailto:aaron.milner.contact@email.com">
-                                aaron.milner.contact@email.com
-                                <span class="material-icons text-sm ml-1 group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
-</a>
-</div>
-<div>
-<h3 class="text-xl font-medium text-slate-200 mb-2 flex items-center">
-<svg aria-hidden="true" class="w-6 h-6 mr-3 text-sky-400" fill="currentColor" viewBox="0 0 24 24">
-<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
-</svg>
-                                LinkedIn
-                            </h3>
-<p class="text-slate-300 mb-2">
-                                Connect with me on LinkedIn for professional networking and updates.
-                            </p>
-<a class="inline-flex items-center text-sky-400 hover:text-sky-300 transition-colors font-medium group" href="https://www.linkedin.com/in/yourprofile" rel="noopener noreferrer" target="_blank">
-                                View My LinkedIn Profile
-                                <span class="material-icons text-sm ml-1 group-hover:translate-x-1 transition-transform duration-200">open_in_new</span>
-</a>
-</div>
-</div>
-</div>
-<div class="bg-slate-700 p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-sky-500/20 transition-shadow duration-300">
-<h2 class="text-3xl font-semibold text-sky-400 mb-6">My Availability</h2>
-<p class="text-slate-300 mb-4">
-                        Check my calendar below for my general availability. Feel free to propose a meeting time that works for you.
-                    </p>
-<div class="calendar-container aspect-w-16 aspect-h-9 md:aspect-h-10 lg:aspect-h-11">
-<iframe frameborder="0" height="100%" scrolling="no" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&showCalendars=0&showTitle=0&src=bWlsbmVyYWFyb241QGdtYWlsLmNvbQ&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%230b8043" style="border-width:0" width="100%"></iframe>
-</div>
-<p class="text-xs text-slate-500 mt-3 text-center">Times are displayed in your local timezone.</p>
-</div>
+<div class="max-w-4xl mx-auto grid grid-cols-1 gap-8 md:gap-12">
+    <div class="bg-slate-700 p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-sky-500/20 transition-shadow duration-300">
+        <h2 class="text-3xl font-semibold text-sky-400 mb-6">Connect With Me</h2>
+        <div class="space-y-6">
+            <div>
+                <h3 class="text-xl font-medium text-slate-200 mb-2 flex items-center">
+                    <span class="material-icons mr-3 text-sky-400">email</span> Email
+                </h3>
+                <p class="text-slate-300 mb-2">
+                    The best way to reach me for any inquiries or collaborations.
+                </p>
+                <a class="inline-flex items-center text-sky-400 hover:text-sky-300 transition-colors font-medium group" href="mailto:aaron.milner.contact@email.com">
+                    aaron.milner.contact@email.com
+                    <span class="material-icons text-sm ml-1 group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
+                </a>
+            </div>
+            <div>
+                <h3 class="text-xl font-medium text-slate-200 mb-2 flex items-center">
+                    <svg aria-hidden="true" class="w-6 h-6 mr-3 text-sky-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                    </svg>
+                    LinkedIn
+                </h3>
+                <p class="text-slate-300 mb-2">
+                    Connect with me on LinkedIn for professional networking and updates.
+                </p>
+                <a class="inline-flex items-center text-sky-400 hover:text-sky-300 transition-colors font-medium group" href="https://www.linkedin.com/in/yourprofile" rel="noopener noreferrer" target="_blank">
+                    View My LinkedIn Profile
+                    <span class="material-icons text-sm ml-1 group-hover:translate-x-1 transition-transform duration-200">open_in_new</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-slate-700 p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-sky-500/20 transition-shadow duration-300 mt-8 md:mt-12">
+        <h2 class="text-3xl font-semibold text-sky-400 mb-6">My Availability</h2>
+        <p class="text-slate-300 mb-4">
+            Check my calendar below for my general availability. Feel free to propose a meeting time that works for you.
+        </p>
+        <div class="calendar-container w-full h-[600px] md:h-[700px] lg:h-[800px]">
+            <iframe
+                src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=America%2FNew_York&showPrint=0&mode=WEEK&showTz=0&showTitle=0&showCalendars=0&src=bWlsbmVyYWFyb241QGdtYWlsLmNvbQ&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%230b8043"
+                style="border-width:0"
+                width="100%"
+                height="100%"
+                frameborder="0"
+                scrolling="no">
+            </iframe>
+        </div>
+        <p class="text-xs text-slate-500 mt-3 text-center">Times are displayed in your local timezone.</p>
+    </div>
 </div>
 </div>
 </section>
@@ -140,6 +153,6 @@
                 // For links to other pages or sections on other pages, let the browser handle it naturally
             });
         });
-    </script>
+</script>
 
 </body></html>
