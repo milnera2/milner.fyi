@@ -17,6 +17,12 @@
         .text-shadow-subtle {
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
+        /* Custom class for clickable engagement cards */
+        .engagement-card {
+            cursor: pointer;
+            position: relative; /* Needed for pseudo-elements or absolute positioning if content itself isn't a link */
+            display: block; /* Make the whole card a block-level link if applicable */
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-300">
@@ -134,21 +140,21 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-sky-400">My Engagements</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="bg-slate-700 rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                <a href="https://norseiot.club/" target="_blank" class="engagement-card bg-slate-700 rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
                     <img alt="Norse IoT logo placeholder" class="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-2 border-sky-500" src="media/logos/norseiotlogo.png"/>
                     <h3 class="text-xl font-semibold text-sky-400 mb-2">Norse IoT</h3>
                     <p class="text-slate-300 text-sm">Northern Kentucky University's IoT Club actively involved in developing IoT solutions, focusing on innovative projects and building a strong community of dedicated individuals.</p>
-                </div>
-                <div class="bg-slate-700 rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                </a>
+                <a href="https://www.nkcyber.org/" target="_blank" class="engagement-card bg-slate-700 rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
                     <img alt="NKCyber logo placeholder" class="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-2 border-sky-500" src="media/logos/nkcyberlogo.svg"/>
                     <h3 class="text-xl font-semibold text-sky-400 mb-2">NKCyber</h3>
                     <p class="text-slate-300 text-sm">Participating in cybersecurity initiatives and events, enhancing skills in digital security and threat analysis.</p>
-                </div>
-                <div class="bg-slate-700 rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                </a>
+                <a href="https://www.scouting.org/" target="_blank" class="engagement-card bg-slate-700 rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
                     <img alt="Scouting America logo placeholder" class="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-2 border-sky-500" src="media/logos/scoutingamericalogo.png"/>
                     <h3 class="text-xl font-semibold text-sky-400 mb-2">Scouting America</h3>
                     <p class="text-slate-300 text-sm">Engaged in leadership and community service through Scouting, fostering youth development and outdoor skills.</p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
