@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Project Details - Aaron Milner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-gradient-deep-slate {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        }
+        .text-shadow-subtle {
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3), 0 6px 6px rgba(14, 165, 233, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300">
+    <header class="bg-slate-800 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a class="text-2xl font-bold text-sky-400" href="index.html">milner.fyi</a>
+            <nav class="hidden md:flex space-x-6">
+                <a class="text-slate-400 hover:text-sky-400 transition-colors" href="index.html">Home</a>
+                <a class="text-sky-400 font-semibold hover:text-sky-300 transition-colors" href="projects.html">Projects</a>
+                <a class="text-slate-400 hover:text-sky-400 transition-colors" href="experience.html">Experience</a>
+                <a class="text-slate-400 hover:text-sky-400 transition-colors" href="passions.html">Passions</a>
+                <a class="text-slate-400 hover:text-sky-400 transition-colors" href="contact.html">Contact</a>
+            </nav>
+            <button class="md:hidden text-slate-400" id="mobile-menu-button">
+                <span class="material-icons">menu</span>
+            </button>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <nav class="flex flex-col space-y-2 p-4 bg-slate-800 shadow-lg">
+                <a class="text-slate-400 hover:text-sky-400 transition-colors py-2 block" href="index.html">Home</a>
+                <a class="text-sky-400 font-semibold hover:text-sky-300 transition-colors py-2 block" href="projects.html">Projects</a>
+                <a class="text-slate-400 hover:text-sky-400 transition-colors py-2 block" href="experience.html">Experience</a>
+                <a class="text-slate-400 hover:text-sky-400 transition-colors py-2 block" href="passions.html">Passions</a>
+                <a class="text-slate-400 hover:text-sky-400 transition-colors py-2 block" href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <section class="py-16 md:py-24 bg-slate-800" id="project-detail">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-10">
+                    <a class="inline-flex items-center text-sky-400 hover:text-sky-300 transition-colors mb-4 group" href="projects.html">
+                        <span class="material-icons text-lg mr-1 group-hover:-translate-x-1 transition-transform duration-200">arrow_back</span>
+                        Back to Projects
+                    </a>
+                    <h1 class="text-4xl md:text-5xl font-bold text-sky-400 text-shadow-subtle mb-4">Search and Rescue Coordinator (SARCO)</h1>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <span class="inline-block bg-green-500 text-green-900 text-xs font-semibold px-3 py-1 rounded-full">
+                            Completed
+                        </span>
+                        <span class="text-slate-500 text-sm">Last updated: June 16, 2025</span>
+                    </div>
+                </div>
+                <div class="bg-slate-700 p-6 sm:p-8 rounded-xl shadow-lg mb-12">
+                    <h2 class="text-3xl font-semibold text-sky-400 mb-4">Description</h2>
+                    <p class="text-slate-300 leading-relaxed">
+                        A prototype device designed to enhance communication and coordination between on-field teams and mission control in urban search and rescue (SAR) operations. The device was named SARCO, search and rescue coordinator, and integrates a GPS module with a Raspberry Pi to provide precise location data. The electronics are contained in a 3D printed case attached to a common hiking stick.
+<br><br>
+The SARCO receives accurate GPS coordinates, which are then transmitted to a centralized database. From there, these coordinates are visualized using the Google Maps API, allowing multiple points to be displayed on a single map.
+<br><br>
+This project significantly improves operational efficiency, offering up to 30 feet greater accuracy than a modern smartphone. By enabling better visualization of team locations and mission-critical data, SARCO enhances situational awareness and decision-making during rescue missions. 
+<br><br>
+The project was submitted and placed 1st for both INTERalliance's 2024 Tech Olympics and the 2024 UC IT Expo.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="bg-sky-600 text-sky-100 text-xs font-medium px-2.5 py-0.5 rounded-full">SAR</span>
+                        <span class="bg-sky-600 text-sky-100 text-xs font-medium px-2.5 py-0.5 rounded-full">3D Printing</span>
+                        <span class="bg-sky-600 text-sky-100 text-xs font-medium px-2.5 py-0.5 rounded-full">Microcontrollers</span>
+                        <span class="bg-sky-600 text-sky-100 text-xs font-medium px-2.5 py-0.5 rounded-full">GPS</span>
+                    </div>
+                </div>
+                <div class="bg-slate-700 p-6 sm:p-8 rounded-xl shadow-lg mb-12">
+                    <h2 class="text-3xl font-semibold text-sky-400 mb-6">Major Updates</h2>
+                    <div class="space-y-8">
+                        <div class="relative pl-8 border-l-2 border-sky-500">
+                            <div class="absolute w-4 h-4 bg-sky-400 rounded-full -left-[9px] top-1 border-2 border-slate-700"></div>
+                            <h3 class="text-xl font-medium text-slate-100 mb-1">Initial Design Period</h3>
+                            <p class="text-sm text-slate-400 mb-2">January 05, 2024</p>
+                            <p class="text-slate-300">Began the intial prototype design and outlining objectives. A set timeline was outlined in accordance with the upcoming competitions.</p>
+                        </div>
+                        <div class="relative pl-8 border-l-2 border-sky-500">
+                            <div class="absolute w-4 h-4 bg-sky-400 rounded-full -left-[9px] top-1 border-2 border-slate-700"></div>
+                            <h3 class="text-xl font-medium text-slate-100 mb-1">Prototyping and Development</h3>
+                            <p class="text-sm text-slate-400 mb-2">January 29, 2024</p>
+                            <p class="text-slate-300">Developed the attachment to the hiking stick and developed the front-end for the project.</p>
+                        </div>
+                        <div class="relative pl-8 border-l-2 border-sky-500">
+                            <div class="absolute w-4 h-4 bg-sky-400 rounded-full -left-[9px] top-1 border-2 border-slate-700"></div>
+                            <h3 class="text-xl font-medium text-slate-100 mb-1">Tech Olympics 2024</h3>
+                            <p class="text-sm text-slate-400 mb-2">Febuary 18, 2024</p>
+                            <p class="text-slate-300">Presented the prototype at Tech Olympics 2024 and it placed 1st place.</p>
+                        </div>
+                        <div class="relative pl-8 border-l-2 border-sky-500">
+                            <div class="absolute w-4 h-4 bg-sky-400 rounded-full -left-[9px] top-1 border-2 border-slate-700"></div>
+                            <h3 class="text-xl font-medium text-slate-100 mb-1">2024 UC IT Expo</h3>
+                            <p class="text-sm text-slate-400 mb-2">April 10, 2024</p>
+                            <p class="text-slate-300">Presented the prototype at the 2024 UC IT Expo it placed 1st place.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-700 p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h2 class="text-3xl font-semibold text-sky-400 mb-6">Project Gallery</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden gallery-item">
+                            <img alt="Project visual 1" class="w-full h-full object-cover" src="gallery/SARCO/Screenshot_20240221-182303 (1).png"/>
+                        </div>
+                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden gallery-item">
+                            <img alt="Project visual 2" class="w-full h-full object-cover" src="gallery/SARCO/Screenshot_20240410-174641~2.png"/>
+                        </div>
+                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden gallery-item">
+                            <img alt="Project visual 3" class="w-full h-full object-cover" src="gallery/SARCO/IMG_0047.jpg"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-slate-950 text-slate-500 py-8 text-center">
+        <div class="container mx-auto px-6">
+            <p>© 2025 Aaron Milner. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const icon = menuButton.querySelector('.material-icons');
+                if (icon.textContent === 'menu') {
+                    icon.textContent = 'close';
+                } else {
+                    icon.textContent = 'menu';
+                }
+            });
+        }
+        // Smooth scroll for same-page anchors (though not primarily used on this page)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#') && document.getElementById(href.substring(1))) {
+                    e.preventDefault();
+                    const targetId = href;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
+                            menuButton.click();
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
