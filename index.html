@@ -17,11 +17,10 @@
         .text-shadow-subtle {
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
-        /* Custom class for clickable engagement cards */
         .engagement-card {
             cursor: pointer;
-            position: relative; /* Needed for pseudo-elements or absolute positioning if content itself isn't a link */
-            display: block; /* Make the whole card a block-level link if applicable */
+            position: relative;
+            display: block;
         }
     </style>
 </head>
@@ -184,14 +183,12 @@
         </div>
     </footer>
     <script>
-        // Mobile menu toggle
-        const menuButton = document.getElementById('mobile-menu-button'); // Select by ID
-        const mobileMenu = document.getElementById('mobile-menu');        // Select mobile menu div by ID
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
         if (menuButton && mobileMenu) {
             menuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden'); // Toggle the 'hidden' class
-                // Toggle icon between menu and close
+                mobileMenu.classList.toggle('hidden');
                 const icon = menuButton.querySelector('.material-icons');
                 if (icon.textContent === 'menu') {
                     icon.textContent = 'close';
@@ -201,7 +198,6 @@
             });
         }
 
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -211,9 +207,8 @@
                     targetElement.scrollIntoView({
                         behavior: 'smooth'
                     });
-                    // Close mobile menu if open and it's a mobile view
                     if (mobileMenu && !mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
-                        menuButton.click(); // Simulate click to close and change icon
+                        menuButton.click();
                     }
                 }
             });

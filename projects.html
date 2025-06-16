@@ -140,7 +140,6 @@
         if (menuButton && mobileMenu) {
             menuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
-                // Toggle icon between menu and close
                 const icon = menuButton.querySelector('.material-icons');
                 if (icon.textContent === 'menu') {
                     icon.textContent = 'close';
@@ -149,7 +148,6 @@
                 }
             });
         }
-        // Smooth scrolling for navigation links (for potential in-page links on projects.html if any)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -159,9 +157,8 @@
                     targetElement.scrollIntoView({
                         behavior: 'smooth'
                     });
-                    // Close mobile menu if open and it's a mobile view
                     if (mobileMenu && !mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
-                        menuButton.click(); // Simulate click to close and change icon
+                        menuButton.click();
                     }
                 }
             });
