@@ -41,7 +41,7 @@ const Navbar = () => {
           
           {/* Resume CTA */}
           <a 
-            href="public\media\other\MilnerResume.pdf" 
+            href="media/other/MilnerResume.pdf" 
             target="_blank" 
             rel="noopener noreferrer"
             className="ml-4 px-5 py-2 border border-brand-accent/50 text-brand-accent text-xs font-bold tracking-widest rounded hover:bg-brand-accent/10 transition-all shadow-[inset_0_0_10px_rgba(56,189,248,0.1)]"
@@ -75,7 +75,7 @@ const Navbar = () => {
               {link.name.toUpperCase()}
             </NavLink>
           ))}
-          <a href="public\media\other\MilnerResume.pdf" className="text-brand-accent pt-4 border-t border-white/5 uppercase">
+          <a href="media/other/MilnerResume.pdf" className="text-brand-accent pt-4 border-t border-white/5 uppercase">
             Download Resume
           </a>
         </div>
