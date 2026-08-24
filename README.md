@@ -1,3 +1,3 @@
 Aaron Milner's Portfolio Site. 
 
-All rights Reserved. 
+© 2026 All rights Reserved. 
