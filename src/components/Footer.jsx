@@ -10,4 +10,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; // <--- ADD THIS LINE
+export default Footer; 
