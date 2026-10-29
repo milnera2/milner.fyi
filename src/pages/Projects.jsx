@@ -14,7 +14,7 @@ const Projects = () => {
         </div>
 
         <a
-          href="https://github.com/milnera2?tab=repositories"
+          href="https://github.com/milnera2"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-brand-accent hover:text-white font-semibold transition-colors duration-150 shrink-0"
