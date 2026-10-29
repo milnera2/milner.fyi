@@ -1,18 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-bg: #1e293b; 
-  --color-brand-accent: #38bdf8; 
-  --color-brand-surface: #334155;
+  /* Brand palette — per redesign/skills/design.md */
+  --color-brand-bg: #0f172a;      /* Deep Space: absolute floor */
+  --color-brand-surface: #1e293b; /* Elevated Tech: cards, glass */
+  --color-brand-primary: #0ea5e9; /* Electric Blue: buttons, dividers */
+  --color-brand-accent: #38bdf8;  /* Neon Sky: glows, subheads, icons */
+  --color-brand-muted: #cbd5e1;   /* Muted Reading: body copy */
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, monospace;
 }
 
 /* This targets the entire browser window */
 html, body, #root {
   background-color: var(--color-brand-bg);
-  color: #f8fafc;
+  color: #ffffff;
   margin: 0;
   padding: 0;
   min-height: 100vh;
+}
+
+/* Visible keyboard focus everywhere (WCAG) */
+*:focus-visible {
+  outline: 2px solid var(--color-brand-accent);
+  outline-offset: 2px;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -27,18 +39,29 @@ html, body, #root {
   filter: brightness(1.1);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 @layer components {
   .markdown-container h1 {
-    @apply text-3xl font-bold text-sky-400 mt-8 mb-4;
+    @apply text-3xl font-bold text-white mt-8 mb-4;
   }
   .markdown-container h2 {
     @apply text-2xl font-semibold text-slate-100 mt-6 mb-3;
   }
   .markdown-container p {
-    @apply text-lg text-slate-400 leading-relaxed mb-4;
+    @apply text-lg text-brand-muted leading-relaxed mb-4;
   }
   .markdown-container ul {
-    @apply list-disc ml-6 mb-4 text-slate-400;
+    @apply list-disc ml-6 mb-4 text-brand-muted;
   }
   .markdown-container li {
     @apply mb-2;
@@ -47,9 +70,9 @@ html, body, #root {
     @apply text-slate-100 font-bold;
   }
   .markdown-container blockquote {
-    @apply border-l-4 border-sky-500 pl-4 italic my-6 text-slate-300;
+    @apply border-l-4 border-white/20 pl-4 italic my-6 text-slate-300;
   }
   .markdown-container a {
-    @apply text-sky-400 underline decoration-sky-400/30 underline-offset-4 transition-all duration-200 hover:text-sky-300 hover:decoration-sky-300;
+    @apply text-brand-accent underline decoration-brand-accent/30 underline-offset-4 transition-all duration-200 hover:text-sky-300 hover:decoration-sky-300;
   }
 }

@@ -1,9 +1,16 @@
 import React, { useRef, useEffect } from 'react';
-import { experienceData, skillsData, awardsData } from '../data/experience';
+import { Download } from 'lucide-react';
+import {
+  experienceData,
+  skillsData,
+  awardsData,
+  educationData,
+  professionalSummary
+} from '../data/experience';
 
 const Experience = () => {
   const scrollRef = useRef(null);
-  
+
   const loopedSkills = [
     ...skillsData.slice(-2),
     ...skillsData,
@@ -20,6 +27,8 @@ const Experience = () => {
   };
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const initializeScroll = () => {
       if (scrollRef.current) {
         const { cardWidth } = getScrollMetrics();
@@ -29,17 +38,20 @@ const Experience = () => {
 
     const initTimer = setTimeout(initializeScroll, 100);
 
-    const autoScrollTimer = setInterval(() => {
-      const { current } = scrollRef;
-      if (current) {
-        const { cardWidth } = getScrollMetrics();
-        current.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
-      }
-    }, 5000);
+    let autoScrollTimer;
+    if (!prefersReducedMotion) {
+      autoScrollTimer = setInterval(() => {
+        const { current } = scrollRef;
+        if (current) {
+          const { cardWidth } = getScrollMetrics();
+          current.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
+        }
+      }, 5000);
+    }
 
     return () => {
       clearTimeout(initTimer);
-      clearInterval(autoScrollTimer);
+      if (autoScrollTimer) clearInterval(autoScrollTimer);
     };
   }, []);
 
@@ -57,49 +69,66 @@ const Experience = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-slate-800 min-h-screen text-slate-200 overflow-x-hidden">
-      <div className="container mx-auto px-4 max-w-5xl">
-        
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-sky-400">My Professional Journey</h1>
-          <div className="mt-10">
-            <a 
-              href="media/other/MilnerResume.pdf" 
-              className="bg-sky-500 text-white hover:bg-sky-600 font-semibold py-3 px-8 rounded-lg shadow-lg transition-all inline-flex items-center" 
-              download
-            >
-              <span className="material-icons mr-2">download</span>
-              Download My Resume
-            </a>
+    <section className="py-16 md:py-24 bg-brand-bg min-h-screen text-slate-200 overflow-x-hidden">
+      <div className="container mx-auto px-6 max-w-5xl">
+
+        {/* Header — title left, resume right */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-white">My Professional Journey</h1>
+          <a
+            href="media/other/MilnerResume.pdf"
+            className="inline-flex items-center gap-2 bg-brand-primary text-white hover:bg-sky-600 font-semibold py-3 px-7 rounded-md transition-colors duration-150 shrink-0 self-start"
+            download
+          >
+            <Download size={18} aria-hidden="true" />
+            Download My Resume
+          </a>
+        </div>
+
+        {/* Professional Summary */}
+        <div className="mb-20">
+          <h2 className="text-2xl font-bold text-white mb-5 pb-3 border-b border-white/10">Professional Summary</h2>
+          <p className="text-lg text-slate-400 leading-relaxed max-w-3xl">
+            {professionalSummary}
+          </p>
+        </div>
+
+        {/* Career Experience */}
+        <div className="mb-20">
+          <h2 className="text-2xl font-bold text-white mb-8 pb-3 border-b border-white/10">Career Experience</h2>
+          <div className="space-y-6">
+            {experienceData.map((job, index) => (
+              <div key={index} className="bg-brand-surface p-6 rounded-lg border border-white/10">
+                <div className="flex flex-col sm:flex-row justify-between mb-4 gap-2">
+                  <div>
+                    <h3 className="text-xl font-bold text-white">{job.title}</h3>
+                    <p className="text-slate-300 font-medium">{job.company}</p>
+                  </div>
+                  <span className="text-slate-400 text-sm sm:text-right shrink-0">{job.period}</span>
+                </div>
+                <p className="text-slate-400 mb-4 leading-relaxed">{job.description}</p>
+                <ul className="list-disc list-inside space-y-2 text-slate-300 leading-relaxed mb-4">
+                  {job.bullets.map((bullet, i) => <li key={i}>{bullet}</li>)}
+                </ul>
+                {job.tags?.length > 0 && (
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {job.tags.map(tag => (
+                      <span key={tag} className="font-mono text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10 text-slate-300">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Experience Section */}
-        <div className="mb-24 max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-sky-400 mb-10 border-b border-slate-700 pb-2">Career Experience</h2>
-          {experienceData.map((job, index) => (
-            <div key={index} className="mb-10 bg-slate-700/40 p-6 rounded-xl border border-slate-600 hover:border-sky-500/40 transition-all shadow-md">
-              <div className="flex flex-col sm:flex-row justify-between mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-white">{job.title}</h3>
-                  <p className="text-sky-400 font-semibold">{job.company}</p>
-                </div>
-                <span className="text-slate-400 text-sm font-mono mt-1">{job.period}</span>
-              </div>
-              {/* Brightened list items from slate-400 to slate-200 */}
-              <ul className="list-disc list-inside space-y-2 text-slate-200 leading-relaxed">
-                {job.bullets.map((bullet, i) => <li key={i}>{bullet}</li>)}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {/* Skills Carousel */}
-        <div className="mb-24 max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-sky-400 mb-12 text-center">Relevant Skills</h2>
+        {/* Skills — rotating cards */}
+        <div className="mb-20">
+          <h2 className="text-2xl font-bold text-white mb-8 pb-3 border-b border-white/10">Relevant Skills</h2>
           <div className="relative overflow-hidden">
-            <div 
+            <div
               ref={scrollRef}
               onScroll={handleScroll}
               className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory gap-6"
@@ -107,14 +136,14 @@ const Experience = () => {
             >
               {loopedSkills.map((skillGroup, index) => (
                 <div key={`${skillGroup.category}-${index}`} className="w-full md:w-[calc(50%-12px)] flex-shrink-0 snap-start">
-                  <div className="bg-slate-700 p-8 rounded-2xl shadow-2xl border border-slate-600 h-full transition-all hover:border-sky-500/30">
-                    <h4 className="text-xs font-black text-sky-400 mb-6 border-b border-slate-600/50 pb-3 uppercase tracking-[0.2em] text-center">
+                  <div className="bg-brand-surface p-8 rounded-lg border border-white/10 h-full">
+                    <h4 className="text-sm font-bold text-white mb-6 pb-3 border-b border-white/10">
                       {skillGroup.category}
                     </h4>
-                    <ul className="grid grid-cols-2 gap-4">
+                    <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
                       {skillGroup.items.map(item => (
-                        <li key={item} className="text-white flex items-center text-sm font-medium">
-                          <span className="w-1.5 h-1.5 rounded-full bg-sky-500 mr-3 shrink-0"></span> {item}
+                        <li key={item} className="text-slate-300 flex items-center text-sm">
+                          <span className="w-1.5 h-1.5 rounded-full bg-slate-500 mr-3 shrink-0"></span> {item}
                         </li>
                       ))}
                     </ul>
@@ -125,23 +154,39 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Awards Section */}
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-sky-400 mb-10 border-b border-slate-700 pb-2">Awards & Certifications</h2>
-          <div className="space-y-6">
+        {/* Education */}
+        <div className="mb-20">
+          <h2 className="text-2xl font-bold text-white mb-8 pb-3 border-b border-white/10">Education</h2>
+          {educationData.map((edu, index) => (
+            <div key={index} className="flex flex-col sm:flex-row justify-between gap-3">
+              <div>
+                <h3 className="text-xl font-bold text-white">{edu.institution}</h3>
+                <p className="text-slate-300 font-medium">{edu.degree}</p>
+                <p className="text-slate-400 mt-2">
+                  <span className="font-semibold text-slate-300">Minors:</span> {edu.minors.join(', ')}
+                </p>
+              </div>
+              <span className="text-slate-400 text-sm sm:text-right shrink-0">{edu.period}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Awards & Honors — list rows */}
+        <div>
+          <h2 className="text-2xl font-bold text-white mb-2 pb-3 border-b border-white/10">Awards &amp; Honors</h2>
+          <div>
             {awardsData.map((award, index) => (
-              <div key={index} className="bg-slate-700/40 p-6 rounded-xl border border-slate-600">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold text-white">{award.title}</h3>
-                  <span className="text-sky-500 font-mono text-xs">{award.date}</span>
+              <div key={index} className="grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-1 py-5 border-b border-white/10">
+                <div>
+                  <h3 className="font-bold text-white">{award.title}</h3>
+                  <p className="text-sm text-slate-400 mt-0.5">{award.issuer} — <span className="text-slate-300">{award.description}</span></p>
                 </div>
-                <p className="text-sky-400 text-sm font-semibold mb-2">{award.issuer}</p>
-                {/* Brightened description from slate-400 to slate-200 */}
-                <p className="text-slate-200 text-sm leading-relaxed">{award.description}</p>
+                <span className="text-sm text-slate-400 sm:text-right shrink-0">{award.date}</span>
               </div>
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );
