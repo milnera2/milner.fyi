@@ -5,7 +5,84 @@ import sarcoGroup from '../assets/projects/covers/sarcogroupphoto.png';
 import thermonator from '../assets/projects/covers/thermonatorbackpack.jpg';
 import websocket from '../assets/projects/covers/websocketpresent.png';
 
+// Ordered newest first. `featured` marks the flagship three shown on Home.
+// `content` present = has a detail page. `externalUrl` = button links off-site.
+// `gallery` = opens an image modal instead of a detail page.
 export const projectsData = [
+  {
+    id: "engagement-live",
+    title: "Engagement.Live",
+    date: "October 2026",
+    category: "Startup / Web Application",
+    summary: "A campus navigation and event tracking web application that is currently being scaled into an independent startup.",
+    role: "Co-Founder",
+    technologies: ["React", "Node.js", "MongoDB", "Vite"],
+    outcome: "Placed 1st at the Northern Kentucky University Community-themed Hackathon.",
+    image: "/media/photos/engagementlivegroupphoto.jpg",
+    featured: true,
+    gallery: [
+      "/media/photos/engagementlivedemo.png",
+      "/media/photos/engagementlivegroupphoto.jpg"
+    ]
+  },
+  {
+    id: "multi-agent-contract-resolution",
+    title: "Multi-Agent AI Contract Resolution Framework",
+    date: "October 2026",
+    category: "Artificial Intelligence",
+    summary: "An open-source multi-agent AI contract resolution framework built under an append-only decision audit log model.",
+    role: "Sole Developer",
+    technologies: ["Python", "NiceGUI", "Ollama", "PyMuPDF", "EasyOCR"],
+    outcome: "Deployed to GitHub.",
+    image: null,
+    featured: true,
+    externalUrl: "https://github.com/milnera2/Agentic-AI-Contract-Resolution"
+  },
+  {
+    id: "institutional-ai-hedge-fund",
+    title: "Institutional AI Hedge Fund Research",
+    date: "August 2026",
+    category: "Artificial Intelligence / FinTech",
+    summary: "Designing an AI hedge fund research system across macro, fundamentals, quantitative signals, risk, and execution for institutional investment research.",
+    role: "Paid AI Consultant / Developer",
+    outcome: "Currently in active research and development in partnership with the NKU COI AI Studio and Fidelity Center for Applied Technology (FCAT).",
+    image: null,
+    featured: true
+  },
+  {
+    id: "alto-cube",
+    title: "Alto Cube",
+    date: "April 2026",
+    category: "Hardware and AI",
+    summary: "A small desktop robotic assistant that utilizes edge AI to actively interact and communicate with users.",
+    role: "Lead Developer",
+    technologies: ["MongoDB Atlas", "ElevenLabs", "Raspberry Pi", "React", "Vite"],
+    outcome: "Won Best MVP – Blue North, MLH – Best Use of ElevenLabs, and MLH – Best Use of MongoDB Atlas at NKU Victor Hacks.",
+    image: "/media/photos/altocube.jpg"
+  },
+  {
+    id: "liquid-rocket-daQ",
+    title: "Liquid Rocket Engine DAQ (NKU Rocket Team)",
+    date: "April 2026",
+    category: "Aerospace & Software",
+    summary: "An open-source liquid rocket engine data acquisition (DAQ) and software control dashboard application.",
+    role: "Software Lead",
+    technologies: ["Python", "NiceGUI", "LabJack"],
+    outcome: "Still in development.",
+    image: null,
+    externalUrl: "https://github.com/milnera2/Liquid-Rocket-Engine-DAQ-and-Software-Control"
+  },
+  {
+    id: "iot-instrument-workshop",
+    title: "IoT Instrument Workshop",
+    date: "February 2026",
+    category: "Education & IoT",
+    summary: "An interactive, hands-on activity to teach participants about IoT Devices and wiring simple circuits.",
+    role: "Presenter",
+    technologies: ["ESP32", "Buzzers", "Various Hardware"],
+    outcome: "The Workshop was presented at Tech Olympics 2026 and various other events receiving positive feedback at each event.",
+    image: null
+  },
   {
     id: "mod-turing-test",
     title: "Modified \"Turing Test\" with an English Focus",
@@ -16,9 +93,10 @@ export const projectsData = [
     technologies: ["GPT-4o", "Google Forms", "Google Sheets"],
     outcome: "Test takers were not often able to differentiate between human and AI writing.",
     image: alanTuring,
+    externalUrl: "https://docs.google.com/forms/d/e/1FAIpQLScYY03nxx-rUgJVCH5GXM-C3fFpn5VQ_ivAvkyg3VJ2OK9JMQ/viewform?usp=header",
     content: `# Modified "Turing Test" with an English Focus
 
-**Status:** Completed  
+**Status:** Completed
 **Last updated:** June 24, 2025
 
 ## Description
@@ -40,58 +118,21 @@ Grace Wu, Amir Easton, Neale Warren, Davy Lively, Patrick Hirsch, Toby Carter, K
 
 ## Major Updates
 
-*   **Collecting Content Writers** (April 20, 2025)  
+*   **Collecting Content Writers** (April 20 2025)
     Recruited a diverse group of human volunteers to provide original short stories and creative prose for the control group of the test.
 
-*   **Test Assembly** (April 27, 2025)  
+*   **Test Assembly** (April 27 2025)
     Curated the final selection of human and AI-generated media. Integrated the content into a structured assessment format to ensure a blind testing environment.
 
-*   **Project Submission** (May 06, 2025)  
-    Finalized data analysis and submitted the complete study for the ENG316S final requirement.`
-  },
-  {
-    id: "chemical-sniffer",
-    title: "Chemical \"Sniffing\" Robot Dog Attachment",
-    date: "April 2025",
-    category: "Robotics & IoT",
-    summary: "Attachment containing a large array of sensors used to transmit critical readings via MQTT to provide live, accurate data of chemical leaks or chemical readings in contained spaces.",
-    role: "Project Lead",
-    technologies: ["CAD", "C++", "Various Hardware", "ESP-32", "MQTT"],
-    outcome: "Project is still in development.",
-    image: thermonator,
-    content: `# Chemical "Sniffing" Robot Dog Attachment
+*   **Project Submission** (May 06 2025)
+    Finalized data analysis and submitted the complete study for the ENG316S final requirement.
 
-**Status:** In-Progress  
-**Last updated:** June 16, 2025
-
-## Description
-
-Developed in partnership with **Duke Energy**, this project involves the creation of an advanced air quality monitoring payload designed for quadruped robotic platforms (robot dogs). The device functions as a mobile sensor array, capable of "sniffing" out airborne chemicals in environments that may be hazardous or difficult for humans to access.
-
-The primary objective is the detection and measurement of **hydrogen levels** to identify potential leaks within large-scale battery storage systems and industrial facilities. By mounting this IoT-enabled device on a mobile robot, facilities can automate safety inspections and achieve high-granularity environmental data.
-
-### Key Impact:
-*   **Operational Safety:** Enables leak detection in high-voltage or hazardous areas without human exposure.
-*   **Real-Time Monitoring:** Utilizes the **MQTT** protocol for low-latency data transmission to centralized monitoring dashboards.
-*   **Platform Agnostic:** Features a custom 3D-printed chassis designed to interface with various robotic "backpack" mounting systems.
-
-> **Key Technologies:** ESP-32, MQTT, MQ-8 Hydrogen Sensors, 3D Printing, IoT, Robotics
-
-## Major Updates
-
-*   **Initial Design Period** (March 30, 2025)  
-    Conceptualized the integration of gas sensor arrays with robotic power systems. Developed the first mock-ups for form-factor testing and center-of-gravity fittings.
-
-*   **Prototype 1** (April 01, 2025)  
-    Successful completion of the first functional 3D-printed attachment. This version established the mechanical interface for standard robotic mounting rails.
-
-*   **Duke Energy Showcase** (May 08, 2025)  
-    Presented the functional prototype at the grand opening of the Duke Energy Innovation Lab. Demonstrated the device's ability to transmit sensor data wirelessly during robotic movement.`
+**[Take the test](https://docs.google.com/forms/d/e/1FAIpQLScYY03nxx-rUgJVCH5GXM-C3fFpn5VQ_ivAvkyg3VJ2OK9JMQ/viewform?usp=header)**`
   },
   {
     id: "websocket-workshop",
     title: "WebSocket Workshop",
-    date: "June 2025",
+    date: "April 2025",
     category: "Education & IoT",
     summary: "An interactive, hands-on activity to teach participants about WebSocket technology and wiring simple circuits.",
     role: "Presenter",
@@ -100,8 +141,8 @@ The primary objective is the detection and measurement of **hydrogen levels** to
     image: websocket,
     content: `# WebSocket Workshop
 
-**Status:** Completed  
-**Last updated:** June 16, 2025
+**Status:** Completed
+**Last updated:** June 16 2025
 
 ## Description
 
@@ -118,14 +159,53 @@ Participants explore the fundamentals of wiring circuits and programming hardwar
 
 ## Major Updates
 
-*   **TSA Presentation** (January 31, 2025)  
+*   **TSA Presentation** (January 31 2025)
     Successfully debuted the workshop for a high school audience, focusing on the foundational principles of real-time web protocols and basic electronics.
 
-*   **Tech Olympics 2025** (February 15, 2025)  
+*   **Tech Olympics 2025** (February 15 2025)
     Facilitated the workshop at Tech Olympics 2025. Received high engagement and positive feedback for the "vibe-centric" approach to learning complex hardware-software stacks.
 
-*   **STLP State Championship** (April 23, 2025)  
+*   **STLP State Championship** (April 23 2025)
     Scaled the workshop to accommodate a broad K-12 demographic during the state championship event in Lexington, emphasizing modular learning and interactive hardware demos.`
+  },
+  {
+    id: "chemical-sniffer",
+    title: "Chemical \"Sniffing\" Robot Dog Attachment",
+    date: "April 2025",
+    category: "Robotics & IoT",
+    summary: "Attachment containing a large array of sensors used to transmit critical readings via MQTT to provide live, accurate data of chemical leaks or chemical readings in contained spaces.",
+    role: "Project Lead",
+    technologies: ["CAD", "C++", "Various Hardware", "ESP-32", "MQTT"],
+    outcome: "Prototype finished.",
+    image: thermonator,
+    content: `# Chemical "Sniffing" Robot Dog Attachment
+
+**Status:** In-Progress
+**Last updated:** June 16 2025
+
+## Description
+
+Developed in partnership with **Duke Energy**, this project involves the creation of an advanced air quality monitoring payload designed for quadruped robotic platforms (robot dogs). The device functions as a mobile sensor array, capable of "sniffing" out airborne chemicals in environments that may be hazardous or difficult for humans to access.
+
+The primary objective is the detection and measurement of **hydrogen levels** to identify potential leaks within large-scale battery storage systems and industrial facilities. By mounting this IoT-enabled device on a mobile robot, facilities can automate safety inspections and achieve high-granularity environmental data.
+
+### Key Impact:
+*   **Operational Safety:** Enables leak detection in high-voltage or hazardous areas without human exposure.
+*   **Real-Time Monitoring:** Utilizes the **MQTT** protocol for low-latency data transmission to centralized monitoring dashboards.
+*   **Platform Agnostic:** Features a custom 3D-printed chassis designed to interface with various robotic "backpack" mounting systems.
+
+> **Key Technologies:** ESP-32, MQTT, MQ-8 Hydrogen Sensors, 3D Printing, IoT, Robotics
+
+## Major Updates
+
+*   **Initial Design Period** (March 30 2025)
+    Conceptualized the integration of gas sensor arrays with robotic power systems. Developed the first mock-ups for form-factor testing and center-of-gravity fittings.
+
+*   **Prototype 1** (April 01 2025)
+    Successful completion of the first functional 3D-printed attachment. This version established the mechanical interface for standard robotic mounting rails.
+
+*   **Duke Energy Showcase** (May 08 2025)
+    Presented the functional prototype at the grand opening of the Duke Energy Innovation Lab. Demonstrated the device's ability to transmit sensor data wirelessly during robotic movement.`
   },
   {
     id: "sarco",
@@ -139,14 +219,14 @@ Participants explore the fundamentals of wiring circuits and programming hardwar
     image: sarcoGroup,
     content: `# Search and Rescue Coordinator (SARCO)
 
-**Status:** Completed  
-**Last updated:** June 16, 2025
+**Status:** Completed
+**Last updated:** June 16 2025
 
 ## Description
 
 **SARCO** (Search and Rescue Coordinator) is a prototype device engineered to bridge the communication gap between field teams and mission control during urban search and rescue (SAR) operations. The system integrates a GPS module with a Raspberry Pi, housed in a custom 3D-printed enclosure that attaches to a standard hiking stick.
 
-The device captures high-precision GPS coordinates and transmits them to a centralized database. This data is then visualized in real-time using the **Google Maps API**, enabling mission control to track multiple field teams on a single unified interface. 
+The device captures high-precision GPS coordinates and transmits them to a centralized database. This data is then visualized in real-time using the **Google Maps API**, enabling mission control to track multiple field teams on a single unified interface.
 
 ### Key Impact:
 *   **Precision:** Provides up to **30 feet greater accuracy** than standard modern smartphones.
@@ -157,16 +237,16 @@ The device captures high-precision GPS coordinates and transmits them to a centr
 
 ## Major Updates
 
-*   **Initial Design Period** (January 05, 2024)  
+*   **Initial Design Period** (January 05 2024)
     Established core prototype objectives and technical requirements. Outlined a development timeline to align with spring technical competitions.
 
-*   **Prototyping and Development** (January 29, 2024)  
+*   **Prototyping and Development** (January 29 2024)
     Finalized the mechanical hiking stick attachment and developed the front-end dashboard for map visualization.
 
-*   **Tech Olympics 2024** (February 18, 2024)  
+*   **Tech Olympics 2024** (February 18 2024)
     Live demonstration of the SARCO prototype. Secured **1st place** in the technical competition.
 
-*   **2024 UC IT Expo** (April 10, 2024)  
+*   **2024 UC IT Expo** (April 10 2024)
     Presented the refined system to university faculty and industry professionals, earning **1st place** honors.`
   },
   {
@@ -181,8 +261,8 @@ The device captures high-precision GPS coordinates and transmits them to a centr
     image: eagleScout,
     content: `# Eagle Scout Project
 
-**Status:** Completed  
-**Last updated:** June 16, 2025
+**Status:** Completed
+**Last updated:** June 16 2025
 
 ## Description
 
@@ -194,13 +274,13 @@ A primary objective was **cost-effective project management**. By being resource
 
 ## Major Updates
 
-*   **Initial Project Proposal** (January 22, 2023)  
+*   **Initial Project Proposal** (January 22 2023)
     Drafted a comprehensive project plan including logistical timelines, fundraising strategies, and estimated man-hour requirements for approval.
 
-*   **Coordination of Site and Resource Collection** (July 23, 2023)  
+*   **Coordination of Site and Resource Collection** (July 23 2023)
     Executed trail clearing and excavation marking. Simultaneously began the assembly and weatherproofing of the wooden display cases.
 
-*   **Project Completion** (August 2, 2023)  
+*   **Project Completion** (August 2 2023)
     Final installation of all stations. Crosses were secured in cement foundations and the ceramic artworks were permanently mounted within the protective wooden cases.`
   },
   {
@@ -215,12 +295,12 @@ A primary objective was **cost-effective project management**. By being resource
     image: bedGroup,
     content: `# Braille Education Device (B.E.D.)
 
-**Status:** Completed  
-**Last updated:** June 16, 2025
+**Status:** Completed
+**Last updated:** June 16 2025
 
 ## Description
 
-A prototype educational device for Braille (B.E.D.) that features a 3D-printed casing and servo motors controlled by a Raspberry Pi Pico. The design allows the servos to rise and fall, forming the corresponding Braille characters. 
+A prototype educational device for Braille (B.E.D.) that features a 3D-printed casing and servo motors controlled by a Raspberry Pi Pico. The design allows the servos to rise and fall, forming the corresponding Braille characters.
 
 The primary goal was to create a cost-effective and easy-to-implement solution for Braille education. The project was submitted and placed **1st place** at the 2023 [Tech Olympics](https://techolympics.org/). Local news outlet [Local 12 covered the event](https://local12.com/amp/news/local/high-school-tech-olympics-held-at-great-american-ballpark-high-school-technology-robotics-interalliance-greater-cincinnati-coding-school-braille-st-saint-henry-high-school-cincinnati-ohio) and the impact of the device.
 
@@ -228,13 +308,13 @@ The primary goal was to create a cost-effective and easy-to-implement solution f
 
 ## Major Updates
 
-*   **Initial Design Period** (January 12, 2023)  
+*   **Initial Design Period** (January 12 2023)
     Began the initial prototype design and outlining objectives. A set timeline was outlined in accordance with the upcoming competition at Tech Olympics 2023.
 
-*   **Prototyping and Development** (February 01, 2023)  
+*   **Prototyping and Development** (February 01 2023)
     Developed the hardware container and began work on the microcontroller integration and servo calibration.
 
-*   **Tech Olympics 2023** (February 19, 2023)  
+*   **Tech Olympics 2023** (February 19 2023)
     Presented the prototype at Tech Olympics 2023 where it successfully demonstrated real-time Braille character generation and secured 1st place.`
   }
 ];

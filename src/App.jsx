@@ -32,8 +32,9 @@ function App() {
             path="*" 
             element={
               <div className="flex flex-col items-center justify-center h-[60vh] text-white">
-                <h1 className="text-4xl font-bold font-mono text-blue-500">404</h1>
-                <p className="text-gray-400">Resource not found in current directory.</p>
+                <h1 className="text-5xl font-extrabold tracking-tight">404</h1>
+                <p className="text-slate-400 mt-3">Resource not found in current directory.</p>
+                <a href="/" className="mt-6 text-brand-accent hover:text-white font-semibold transition-colors duration-150">Back to home</a>
               </div>
             } 
           />
